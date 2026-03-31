@@ -83,6 +83,8 @@ The complete pipeline works in the following stages:
     * Abnormal movement patterns
     * Potential distress indicators
 
+---
+
 ## How to Run the Project
 **Step 1: Extract the project files**
 Extract all files from the Implementation folder to your local system.
@@ -109,13 +111,15 @@ python -m streamlit run app.py
 **Step 6: Upload a video**
 Open Streamlit app in browser and upload video to detect the behaviors.
 
+---
+
 ## File Descriptions
 1. Cattle_Detection_Counting
    
-Contains code for:
-* cow detection using YOLO
-* cattle counting
-* tracking using DeepSORT
+    Contains code for:
+    * cow detection using YOLO
+    * cattle counting
+    * tracking using DeepSORT
 
 2. Pose_Estimation
     
@@ -129,17 +133,19 @@ Contains code for:
     * detection
     * tracking
     * pose estimation
-
+    
 4. Cow_Random_Forest
    
     Contains code for training the Random Forest behaviour classification model.
     To train this model:
     * You need a CSV dataset similar to master_cow_dataV2.csv.
     * This CSV was created through the following pipeline:
-    * Extract keypoints from pose estimation output in JSON format
-    * Generate numerical features from the JSON data
-    * Combine all extracted features into a final CSV file
-    * Use this CSV to train the Random Forest classifier
+        * Extract keypoints from pose estimation output in JSON format
+        * Generate numerical features from the JSON data
+        * Combine all extracted features into a final CSV file
+        * Use this CSV to train the Random Forest classifier
+
+---
 
 ## Datasets Used
 1. Cattle Detection Dataset
@@ -149,6 +155,8 @@ https://www.kaggle.com/datasets/amiteshpatra07/cattle-dataset-pig-sheep-cow-hors
 2. Cow Pose Estimation Dataset
 Cow Pose Estimation Dataset – Kaggle
 https://www.kaggle.com/datasets/zaidworks0508/cow-pose-estimation-dataset
+
+---
 
 ## Important Note
 The pose estimation model was trained using Roboflow, so the original training configuration files (such as the .yaml file) are not included in this repository.
