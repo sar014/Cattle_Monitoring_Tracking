@@ -109,6 +109,7 @@ pip install -r requirements.txt
 python -m streamlit run app.py
 ```
 **Step 6: Upload a video**
+
 Open Streamlit app in browser and upload video to detect the behaviors.
 
 ---
