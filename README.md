@@ -54,19 +54,23 @@ The complete pipeline works in the following stages:
 
 1. Cow Detection & Counting
     A YOLOv8 object detection model is used to detect cows in each frame. Bounding boxes are generated around each detected cow. The total number of visible cows can be counted frame by frame.
+
 2. Cow Tracking
     DeepSORT is used to assign a unique ID to each detected cow. This allows the system to:
     * track cows across frames
     * avoid duplicate counting
     * analyze behaviour for individual animals over time
+
 3. Pose Estimation
     A YOLOv8-Pose model is used to detect cow body keypoints. These keypoints represent important body parts and help describe posture and movement.
+
 4. Behaviour Classification
     Extracted pose/keypoint-based features are converted into structured data. A Random Forest classifier is used to classify behaviours such as:
     * Walking
     * Lying
     * Eating
     * in distress
+
 5. Distress Monitoring
     Based on posture and behavioural patterns, the system can be extended to identify:
     * prolonged inactivity
@@ -103,19 +107,23 @@ Open Streamlit app in browser and upload video to detect the behaviors.
 ## File Descriptions
 1. Cattle_Detection_Counting
     Contains code for:
-        * cow detection using YOLO
-        * cattle counting
-        * tracking using DeepSORT
+    * cow detection using YOLO
+    * cattle counting
+    * tracking using DeepSORT
+
 2. Pose_Estimation
     Contains code to test pose estimation on cows.
+
     Note: This folder is for testing/inference only and not for training.
 
 3. Detect+Pose
+    
     A combined pipeline integrating:
     * detection
     * tracking
     * pose estimation
 4. Cow_Random_Forest
+   
     Contains code for training the Random Forest behaviour classification model.
     To train this model:
     * You need a CSV dataset similar to master_cow_dataV2.csv.
